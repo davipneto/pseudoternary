@@ -4,7 +4,8 @@
  * Desenvolvido através do Netbeans IDE.
  */
 
-import manchester.*;
+import pseudoternary.BinaryConverter;
+import pseudoternary.Pseudoternary;
 
 /**
  *
@@ -13,14 +14,14 @@ import manchester.*;
 public class Test {
     /**
      * Método Principal da classe Test
-     * Classe usada para testes do Manchester, sem necessdade de Cliente/Servidor
-     * Utilizada para testes dos métodos necessários para implementar o Manchester.
+ Classe usada para testes do Pseudoternary, sem necessdade de Cliente/Servidor
+ Utilizada para testes dos métodos necessários para implementar o Pseudoternary.
      */
     public static void main(String[] args) {
         String binario, textoEmNumero;
         binario = Integer.toBinaryString(100);
         Integer ent[], bin, sai[];
-        Manchester m = new Manchester();
+        Pseudoternary m = new Pseudoternary();
         textoEmNumero = "abcd12345";
         
         //Aqui se vê o valor de cada bit do numero 100
@@ -52,9 +53,9 @@ public class Test {
         }
         System.out.println("");
         System.out.println("String normal ===>" + bc.BinaryToText(array2));
-        //Utilizando o Manchester
+        //Utilizando o Pseudoternary
         ent = m.encode(array2);
-        //testando o Manchester
+        //testando o Pseudoternary
         System.out.println("Depois do Manchester: ");
         for (int i = 0; i < ent.length; i++) {
             System.out.print(ent[i] + "");

@@ -8,8 +8,8 @@ package server;
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
-import manchester.BinaryConverter;
-import manchester.Manchester;
+import pseudoternary.BinaryConverter;
+import pseudoternary.Pseudoternary;
 
 /**
  *
@@ -29,7 +29,7 @@ public class Servidor {
                 /**
          * Variaveis para a decodificador Manchester*
          */
-        Manchester m = new Manchester();
+        Pseudoternary m = new Pseudoternary();
         Integer array[], decriptografado[];
         BinaryConverter bc = new BinaryConverter();
         /*==============================*/
@@ -45,10 +45,10 @@ public class Servidor {
             //Loop Principal, onde o Servidor estará sempre esperando envios do Cliente.
             while (s.hasNextLine()) {
                 array = bc.textToBinary(s.nextLine());
-                //Aqui é possivel ver o texto criptografado pelo Manchester
+                //Aqui é possivel ver o texto criptografado pelo Pseudoternary
                 System.out.println("Criptografado: " + bc.BinaryToText(array));
                 decriptografado = m.decode(array);
-                //Aqui é possivel ver o resultado após a descriptografia do Manchester
+                //Aqui é possivel ver o resultado após a descriptografia do Pseudoternary
                 System.out.println("Decriptografado: " + bc.BinaryToText(decriptografado));
             }
             

@@ -8,8 +8,8 @@ package client;
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
-import manchester.BinaryConverter;
-import manchester.Manchester;
+import pseudoternary.BinaryConverter;
+import pseudoternary.Pseudoternary;
 
 /**
  * @author Marlon Prudente <marlonoliveira@alunos.utfpr.edu.br>
@@ -28,7 +28,7 @@ public class Cliente {
         /**
          * Variaveis para o codificador Manchester*
          */
-        Manchester m = new Manchester();
+        Pseudoternary m = new Pseudoternary();
         Integer array[], criptografado[];
         BinaryConverter bc = new BinaryConverter();
         /*==============================*/

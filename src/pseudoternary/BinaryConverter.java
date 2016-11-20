@@ -3,7 +3,7 @@
  * O Código é livre para uso não comercial;
  * Desenvolvido através do Netbeans IDE.
  */
-package manchester;
+package pseudoternary;
 
 import java.util.Arrays;
 import org.apache.commons.lang3.StringUtils;
