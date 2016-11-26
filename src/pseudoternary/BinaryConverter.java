@@ -18,6 +18,40 @@ public class BinaryConverter {
      * @param binario (Vetor de entrada, cada posição representa um bit).
      * @return nome (String formada pelo conjunto de binario do vetor de entrada).
      */
+    public Integer[] BitTo2Bit(Integer[] bit){
+        Integer[] saida = new Integer[2*bit.length];
+        int i=0,s=0;
+        while(i<bit.length){
+            switch(bit[i]){
+                case 0: saida[s]=saida[s+1]=0; break;
+                case 1: saida[s]=0;saida[s+1]=1; break;
+                case -1: saida[s]=saida[s+1]=1; break;
+            }
+            i++;
+            s=s+2;
+        }
+        return saida;
+    }
+    
+    public Integer[] TwoBitToBit(Integer[] twoBit){
+        Integer[] saida = new Integer[twoBit.length/2];
+        int i=0,s=0;
+        while(s<twoBit.length){
+            switch(twoBit[s]){
+                case 1: saida[i]=-1; break;
+                case 0:
+                    if (twoBit[s+1]==0)
+                        saida[i]=0;
+                    else
+                        saida[i]=1;
+                    break;
+            }
+            i++;
+            s=s+2;
+        }
+        return saida;
+    }
+    
     public String BinaryToText(Integer[] binario) {
         int letras = (binario.length / 8);
         char c[] = new char[binario.length];

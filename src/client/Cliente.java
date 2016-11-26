@@ -29,7 +29,7 @@ public class Cliente {
          * Variaveis para o codificador Manchester*
          */
         Pseudoternary m = new Pseudoternary();
-        Integer array[], criptografado[];
+        Integer array[], criptografado[], crip2bit[];
         BinaryConverter bc = new BinaryConverter();
         /*==============================*/
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
@@ -45,9 +45,28 @@ public class Cliente {
 
         while (teclado.hasNextLine()) {
                 array = bc.textToBinary(teclado.nextLine());
-               //O comando nextLine le o que foi digitado depois do enter
-               criptografado = m.encode(array);
-                saida.println(bc.BinaryToText(criptografado));
+                System.out.println("String: " + bc.BinaryToText(array));
+                System.out.println("String em binário: ");
+                int i;
+                for(i=0;i<array.length;i++){
+                    System.out.print(array[i]);
+                }
+                System.out.println();
+                //O comando nextLine le o que foi digitado depois do enter
+                criptografado = m.encode(array);
+                System.out.println("Codificado: ");
+                for(i=0;i<criptografado.length;i++){
+                    System.out.print(criptografado[i]);
+                }
+                System.out.println();
+                /*descrip = m.decode(criptografado);
+                System.out.println("Decodificado: ");
+                for(i=0;i<descrip.length;i++){
+                    System.out.print(descrip[i]);
+                }
+                System.out.println("\n" + bc.BinaryToText(descrip));*/
+                crip2bit = bc.BitTo2Bit(criptografado);
+                saida.println(bc.BinaryToText(crip2bit));
 
         }
 

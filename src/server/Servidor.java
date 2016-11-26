@@ -30,7 +30,7 @@ public class Servidor {
          * Variaveis para a decodificador Manchester*
          */
         Pseudoternary m = new Pseudoternary();
-        Integer array[], decriptografado[];
+        Integer array[], decriptografado[], crip2bit[];
         BinaryConverter bc = new BinaryConverter();
         /*==============================*/
         
@@ -44,9 +44,15 @@ public class Servidor {
             Scanner s = new Scanner(connectionSocketCliente.getInputStream());
             //Loop Principal, onde o Servidor estará sempre esperando envios do Cliente.
             while (s.hasNextLine()) {
-                array = bc.textToBinary(s.nextLine());
+                int i;
+                crip2bit = bc.textToBinary(s.nextLine());
+                array = bc.TwoBitToBit(crip2bit);
                 //Aqui é possivel ver o texto criptografado pelo Pseudoternary
-                System.out.println("Criptografado: " + bc.BinaryToText(array));
+                System.out.println("Recebido: ");
+                for(i=0;i<array.length;i++){
+                    System.out.print(array[i]);
+                }
+                System.out.println();
                 decriptografado = m.decode(array);
                 //Aqui é possivel ver o resultado após a descriptografia do Pseudoternary
                 System.out.println("Decriptografado: " + bc.BinaryToText(decriptografado));
