@@ -25,7 +25,7 @@ public class Servidor {
     public static void main(String[] args) throws Exception {
         String clientSentence;
         String capitalizedSentence;
-        ServerSocket SocketServidor = new ServerSocket(12345);
+        ServerSocket SocketServidor = new ServerSocket(11111);
                 /**
          * Variaveis para a decodificador Manchester*
          */
@@ -34,7 +34,7 @@ public class Servidor {
         BinaryConverter bc = new BinaryConverter();
         /*==============================*/
         
-        System.out.println("Porta 12345 aberta!");        
+        System.out.println("Porta 11111 aberta!");        
         
         while (true) {
             //Aqui a conexão é feita, o servidor recebe um cliente somente, e se obtiver sucesso, mostra a mensagem de conexão

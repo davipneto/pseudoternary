@@ -35,7 +35,7 @@ public class Cliente {
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
         /*Ip do Servidor e porta*/
-        Socket clientSocket = new Socket("127.0.0.1", 12345);
+        Socket clientSocket = new Socket("127.0.0.1", 11111);
         System.out.println("O cliente se conectou ao servidor!");
         //Aqui esta a variavel que estara lendo o teclado
         Scanner teclado = new Scanner(System.in);
